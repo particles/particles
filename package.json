@@ -1,0 +1,36 @@
+{
+  "name": "particles",
+  "description": "Metapackage for the core Particles platform",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mariocasciaro/particles",
+  "author": {
+    "name": "Mario Casciaro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mariocasciaro/particles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariocasciaro/particles/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mariocasciaro/particles/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "peerDependencies" : {
+    "scatter": "*",
+    "particles-utils": "*",
+    "particles-express": "*",
+    "grunt": "~0.4.1",
+    "grunt-particles": "*"
+  }
+}
