@@ -1,7 +1,7 @@
 {
   "name": "particles",
   "description": "Particles platform",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/mariocasciaro/particles",
   "author": {
     "name": "Mario Casciaro"
@@ -23,6 +23,5 @@
     "scatter": "~0.5.7",
     "particles-prereq": "~0.2.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
