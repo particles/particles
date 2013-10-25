@@ -36,6 +36,9 @@ var self = module.exports = {
     var configNamespace = options.configNamespace || 'particles.app';
     scatter.registerParticles(utils.config.get(configNamespace + '.particles'));
 
+    //register prereq now
+    scatter.registerParticles(__dirname + "/node_modules/particles-prereq");
+
     var nodeModulesDir = utils.config.get(configNamespace + '.nodeModulesDir') || (path.join(appRoot, 'node_modules'));
     scatter.setNodeModulesDir(nodeModulesDir);
 
