@@ -26,7 +26,7 @@ and can be kept separated from code.
 Create a file called `app.js` (or whatever you like) and include the code below:
 
 ```javascript
-require('particles').run(__dirname);
+require('particles').run();
 ```
 
 That's it, now a new Scatter container is created, configured and the entry point (by default the Scatter service `app_start`)

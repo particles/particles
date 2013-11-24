@@ -6,25 +6,23 @@ var utils = require('particles-prereq'),
 var running = false;
 
 var self = module.exports = {
-
-  run: function(appRoot, options) {
+  config: utils.config,
+  scatter: null,
+  run: function(options) {
     if(running) {
-      return utils.promises.resolve();
+      return utils.promises.resolve(self.scatter);
     }
     running = true;
 
     options = options || {};
 
     //initialize
-    utils.initialize({
-      appRoot: appRoot,
-      configDir: options.configDir
-    });
+    utils.initialize(options.config);
 
     var defaultLogger = utils.logger();
     var scatterLogger = utils.logger("Scatter");
 
-    var scatter = new Scatter({
+    self.scatter = new Scatter({
       log: function() {
         return scatterLogger.log.apply(scatterLogger, arguments);
       },
@@ -34,19 +32,21 @@ var self = module.exports = {
     });
 
     var configNamespace = options.configNamespace || 'particles.app';
-    scatter.registerParticles(utils.config.get(configNamespace + '.particles'));
+    self.scatter.registerParticles(utils.config.get(configNamespace + '.particles'));
 
     //register prereq now
-    scatter.registerParticles(__dirname + "/node_modules/particles-prereq");
+    self.scatter.registerParticles(__dirname + "/node_modules/particles-prereq");
 
-    var nodeModulesDir = utils.config.get(configNamespace + '.nodeModulesDir') || (path.join(appRoot, 'node_modules'));
-    scatter.setNodeModulesDir(nodeModulesDir);
+    var nodeModulesDir = utils.config.get(configNamespace + '.nodeModulesDir') || 
+      (path.join(utils.config.get('appRoot'), 'node_modules'));
+    self.scatter.setNodeModulesDir(nodeModulesDir);
 
+    var promise = utils.promises.when(options.beforeServices && options.beforeServices(self));
+    
     var runServices = options.runServices || ['svc|sequence!app_start'];
-    var promise = utils.promises.resolve();
     runServices.forEach(function(svcName) {
       promise = promise.then(function() {
-        return scatter.load(svcName).then(function(svc) {
+        return self.scatter.load(svcName).then(function(svc) {
           return svc.apply(null, options.serviceArgs || []);
         });
       });
@@ -54,10 +54,9 @@ var self = module.exports = {
 
     return promise.then(function() {
       defaultLogger.info("Particles app started!");
-      running = false;
+      return self.scatter;
     }).otherwise(function(err) {
       defaultLogger.error(err.stack);
-      running = false;
       throw err;
     });
   }
