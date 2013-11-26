@@ -1,24 +1,12 @@
-# Synopsis
+# The Particles platform
 
-This package is a wrapper around the [Scatter](https://github.com/mariocasciaro/scatter) IoC container,
-providing essential services (config and log) and boilerplate to get up and running in no time with Scatter and the
-Particles platform.
+Particles is a set of Node.js components (specifically [Scatter](https://github.com/mariocasciaro/scatter) particles) 
+created to **work well together**. Particles is a *platform*, not a framework, 
+it does not want to impose the use of any library or technology, instead, it wants to package ready-to-use solutions in 
+the form of [Scatter](https://github.com/mariocasciaro/scatter) particles.
+The idea is to have a set of components anyone can easily combine to create complete Node.js applications.
 
 [![NPM](https://nodei.co/npm/particles.png?downloads=true)](https://nodei.co/npm/particles/)
-
-# What is the "Particles" platform
-
-Particles aims to be a platform made of Scatter components (called particles) created to **work well together**.
-The idea is to have a set of components anyone can easily combine to create complete Node.js applications, from the
-web server, to the browser, from the db to client side javascript.
-Those components are glued together using the Scatter IoC container, at the core of `particles`, and thanks
-to dependency injection they can be extended, replaced or overridden by simply reorganizing their dependencies.
-
-Using a Particles component is most of the time a drop-in experience, or better as easy as adding a new dependency into
-the `package.json`. No manual initialization, no passing of dependencies/services using code, no `require`s.
-
-A Particles component reuses the configuration of its parent application, so it can be shared across all the components
-and can be kept separated from code.
 
 
 # Basic usage

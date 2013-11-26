@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "scatter": "~0.5.7",
-    "particles-prereq": "~0.2.0"
+    "particles-prereq": "~0.2.3"
   },
   "devDependencies": {}
 }
