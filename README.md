@@ -1,4 +1,4 @@
-![Particles logo](https://raw.github.com/particles/particles/master/img/particles_logo.png)
+![Particles logo](https://raw.github.com/particles/particles/master/img/particles_logo_140.png)
 
 # The Particles platform
 
