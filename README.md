@@ -1,3 +1,5 @@
+![Particles logo](https://raw.github.com/particles/particles/master/img/particles_logo.png)
+
 # The Particles platform
 
 Particles is a set of Node.js components (specifically [Scatter](https://github.com/mariocasciaro/scatter) particles) 
@@ -23,4 +25,15 @@ will be invoked.
 Attach any particles to your module to start composing your application.
 
 Basic services like `config` and `log` are provided by default to all the particles attached to your application.
+
+## Credits
+
+* [Mario Casciaro](https://github.com/mariocasciaro) - Twitter [@mariocasciaro](https://twitter.com/mariocasciaro) - Creator/Maintainer
+* Zbigniew Mrowinski - Particles logo
+* your name here
+
+---
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/particles/particles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
