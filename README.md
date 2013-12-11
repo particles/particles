@@ -32,6 +32,13 @@ Basic services like `config` and `log` are provided by default to all the partic
 * Zbigniew Mrowinski - Particles logo
 * your name here
 
+Feedback & Social
+
+Follow [@particlesjs](https://twitter.com/particlesjs) on Twitter for updates.
+
+Also there is a Google group you can use to ask questions and discuss about Particles. 
+Visit the Hadron [Particles Google group](http://groups.google.com/d/forum/particlesjs).
+
 ---
 
 

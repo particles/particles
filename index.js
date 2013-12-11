@@ -20,7 +20,7 @@ var self = module.exports = {
     utils.initialize(options.config);
 
     var defaultLogger = utils.logger();
-    var scatterLogger = utils.logger("Scatter");
+    var scatterLogger = utils.logger("scatter");
 
     self.scatter = new Scatter({
       log: function() {
@@ -56,7 +56,7 @@ var self = module.exports = {
       defaultLogger.info("Particles app started!");
       return self.scatter;
     }).otherwise(function(err) {
-      defaultLogger.error(err.stack);
+      defaultLogger.error({err: err}, "Failed to run Particles app");
       throw err;
     });
   }
