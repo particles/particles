@@ -6,7 +6,7 @@ Particles is a Node.js platform built on top of the [Scatter](https://github.com
 
 The Particles platform is composed by a core, providing basic services (e.g. log, configuration) plus a set of **ready-to-use, drop-in** solutions to create **modular and extensible** Node.js applications. 
 
-Particles components can contains server side code as well as **client side scripts and assets like css, images and templates**!
+Particles components can contain server side code as well as **client side scripts and assets like css, images and templates**!
 
 Particles is not another framework, 
 it does not want to impose the use of any particular library or technology, but on the other side it encourage the use of patterns like **Dependency Injection and Service locator** to build your app.
@@ -41,7 +41,7 @@ Not too exciting for now, but let's start to build our app.
 
 ## Adding particles
 
-Now, let's see how we can add a new particles to how app. Particles are drop-in components, it means **you don't need to initialize or require** them in your code in order to activate them. It's the magic of having an IoC container!
+Let's add a new particle to our app. Particles are drop-in components, it means **you don't need to initialize or require** them in your code in order to activate them. It's the magic of having an IoC container!
 
 Let's add an express server to our application
 
@@ -49,13 +49,13 @@ Let's add an express server to our application
 npm install particles-express
 ```
 
-That's it, yes really, not kidding. No custom executables, no code to write, just installing an `npm` package. Now you just  fire up your app again and see what happens
+That's it, yes really, not kidding. No custom executable to run, no code to write, just installing an `npm` package. Now you just  fire up your app again and see what happens
 
 ```
 node app
 ```
 
-Try to access http://localhost:3000/ to see what your new server have to say.
+Try to access [http://localhost:3000/](http://localhost:3000/) to check what your new server have to say.
 
 ## Using the services of a particle
 
@@ -80,7 +80,7 @@ module.exports.__module = {
 };
 ```
 
-Restart your server and look at http://localhost:3000/hello
+Restart your server and look at [http://localhost:3000/hello](http://localhost:3000/hello)
 
 A couple of things to notice here:
 
