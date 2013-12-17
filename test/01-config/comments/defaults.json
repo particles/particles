@@ -1,0 +1,8 @@
+{
+  "flat": "helloFlat!",
+  //A comment, it should not be allowed
+  "level": {
+    /* Also this comment should be ok */
+    "val": "helloLevel!"
+  }
+}

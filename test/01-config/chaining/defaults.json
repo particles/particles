@@ -1,0 +1,11 @@
+{
+  "hello": "hello",
+  "overridden": false,
+  "helloWorld": "${hello} ${world:name}!",
+  "world": {
+    "name": "world",
+    "name2": "world2"
+  },
+  "helloWorldExt": "${helloWorld}!!",
+  "next": "next1.json"
+}

@@ -1,0 +1,10 @@
+{
+  "hello": "hello1",
+  "other": "2",
+  "world": {
+    "name": "world1"
+  },
+  "next": {
+    "dev": "next-dev.json"
+  }
+}

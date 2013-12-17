@@ -13,6 +13,9 @@ it does not want to impose the use of any particular library or technology, but 
 
 [![NPM](https://nodei.co/npm/particles.png?downloads=true)](https://nodei.co/npm/particles/)
 
+[![Build Status](https://travis-ci.org/particles/particles.png)](https://travis-ci.org/particles/particles)
+[![Dependency Status](https://david-dm.org/particles/particles.png)](https://david-dm.org/particles/particles)
+
 
 ## Basic usage
 
