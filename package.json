@@ -21,8 +21,8 @@
   ],
   "dependencies": {
     "scatter": "~0.6.0",
-    "lodash": "~2.3.0",
-    "when": "~2.6.0",
+    "lodash": "~2.4.0",
+    "when": "~2.7.0",
     "object-path": "~0.1.1",
     "extend": "1.2.1",
     "bunyan": "~0.22.1",

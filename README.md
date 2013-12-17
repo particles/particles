@@ -16,6 +16,11 @@ it does not want to impose the use of any particular library or technology, but 
 [![Build Status](https://travis-ci.org/particles/particles.png)](https://travis-ci.org/particles/particles)
 [![Dependency Status](https://david-dm.org/particles/particles.png)](https://david-dm.org/particles/particles)
 
+## Stability
+
+**1 - Experimental**
+
+Please try it out and provide feedback.
 
 ## Basic usage
 
