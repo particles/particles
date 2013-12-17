@@ -3,17 +3,10 @@ var utils = require('particles-prereq'),
   Scatter = require('scatter');
 
 
-var running = false;
-
 var self = module.exports = {
   config: utils.config,
   scatter: null,
   run: function(options) {
-    if(running) {
-      return utils.promises.resolve(self.scatter);
-    }
-    running = true;
-
     options = options || {};
 
     //initialize
@@ -31,13 +24,13 @@ var self = module.exports = {
       }
     });
 
-    var configNamespace = options.configNamespace || 'particles.app';
-    self.scatter.registerParticles(utils.config.get(configNamespace + '.particles'));
+    var containerName = utils.config.get('container') || 'default';
+    self.scatter.registerParticles(utils.config.get(['containers', containerName, 'particles']));
 
     //register prereq now
     self.scatter.registerParticles(__dirname + "/node_modules/particles-prereq");
 
-    var nodeModulesDir = utils.config.get(configNamespace + '.nodeModulesDir') || 
+    var nodeModulesDir = utils.config.get(['containers', containerName, 'nodeModulesDir']) || 
       (path.join(utils.config.get('appRoot'), 'node_modules'));
     self.scatter.setNodeModulesDir(nodeModulesDir);
 
