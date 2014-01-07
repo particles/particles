@@ -45,7 +45,11 @@ ParticlesApp.prototype.run = function() {
   var self = this;
   var promise = promises.when(this.options.beforeServices && this.options.beforeServices(this));
   
-  var runService = this.options.runService || 'svc|sequence!app_start';
+  var runService = this.options.runService;
+  if(!runService) {
+    self.defaultLogger.info("No runService provided, using the default entry point service (app_start)");
+    runService = 'svc|sequence!app_start';
+  }
 
   return self.scatter.load(runService).then(function(svc) {
     return svc.apply(null, self.options.serviceArgs || []);
