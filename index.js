@@ -23,7 +23,7 @@ function ParticlesApp(options) {
 
   //register core modules
   this.scatter.registerModuleInstance('config', this.config);
-  this.scatter.registerModuleInstance('loggerFactory', this.loggerFactory);
+  this.scatter.registerModuleInstance('logger', this.loggerFactory.create.bind(this.loggerFactory));
   this.scatter.registerModuleInstance('log', this.defaultLogger);
   this.scatter.registerModuleInstance('utils/promises', promises);
   

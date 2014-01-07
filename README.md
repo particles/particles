@@ -1,5 +1,9 @@
 ![Particles logo](https://raw.github.com/particles/particles/master/img/particles_logo_140.png)
 
+[![NPM version](https://badge.fury.io/js/particles.png)](http://badge.fury.io/js/particles)
+[![Build Status](https://travis-ci.org/particles/particles.png)](https://travis-ci.org/particles/particles)
+[![Dependency Status](https://gemnasium.com/particles/particles.png)](https://gemnasium.com/particles/particles)
+
 # The Particles platform
 
 Particles is a Node.js platform built on top of the [Scatter](https://github.com/mariocasciaro/scatter) IoC container. 
@@ -11,11 +15,6 @@ Particles components can contain server side code as well as **client side scrip
 Particles is not another framework, 
 it does not want to impose the use of any particular library or technology, but on the other side it encourage the use of patterns like **Dependency Injection and Service locator** to build your app.
 
-[![NPM](https://nodei.co/npm/particles.png?downloads=true)](https://nodei.co/npm/particles/)
-
-[![Build Status](https://travis-ci.org/particles/particles.png)](https://travis-ci.org/particles/particles)
-[![Dependency Status](https://david-dm.org/particles/particles.png)](https://david-dm.org/particles/particles)
-
 ## Stability
 
 **1 - Experimental**
@@ -24,26 +23,29 @@ Please try it out and provide feedback.
 
 ## Basic usage
 
-To create your own Particles-based app, just clone the `particles-seed` project
-
+* To bootstrap your own Particles-based app, create an empty git repository:
 ```
-git clone https://github.com/particles/particles-seed.git
+$ mkdir MYAPP && cd MYAPP
+$ git init
 ```
 
-Install the new project
-
+* Checkout the `particles-seed` repository
 ```
-cd particles-seed
+$ git remote add particles-seed -m master https://github.com/particles/particles-seed.git
+$ git pull -s recursive -X theirs particles-seed master
+```
+
+* Install the new project
+```
 npm install
 ```
 
-Run the app
-
+* Run the app
 ```
 node app
 ```
 
-What happened? At startup Particles will execute the [Scatter service](https://github.com/mariocasciaro/scatter/wiki/Guide#services) `app_start`. In the file `app/entryPoint.js` you can find an example on how to execute some code at startup. 
+What happened? At startup the [Scatter service](https://github.com/mariocasciaro/scatter/wiki/Guide#services) `app_start` will be executed. A sample of such a service can be found in the file `app/entryPoint.js`. 
 
 Not too exciting for now, but let's start to build our app.
 
@@ -84,7 +86,7 @@ module.exports.__module = {
     properties: {
         log: "controllers/log"
     },
-    provides: 'setup'
+    provides: 'controllers/setup'
 };
 ```
 
