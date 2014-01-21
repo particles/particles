@@ -2,7 +2,8 @@ var Config = require('./lib/config'),
   LoggerFactory = require('./lib/logger'),
   path  = require('path'),
   promises = require('./lib/promises'),
-  Scatter = require('scatter');
+  Scatter = require('scatter'),
+  ScatterPluginConfig = require('scatter-plugin-config');
 
 function ParticlesApp(options) {
   this.options = options || {};
@@ -18,7 +19,8 @@ function ParticlesApp(options) {
   var self = this;
   this.scatter = new Scatter({
     log: self.scatterLogger.log.bind(this.scatterLogger),
-    startProfiling: self.scatterLogger.startProfiling.bind(this.scatterLogger)
+    startProfiling: self.scatterLogger.startProfiling.bind(this.scatterLogger),
+    plugins: [new ScatterPluginConfig()]
   });
 
   //register core modules
