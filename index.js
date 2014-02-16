@@ -10,7 +10,6 @@ function ParticlesApp(options) {
   this.options = options || {};
   this.config = new Config();
   this.config.initialize(this.options.config);
-  this.running = false;
   
   this.loggerFactory = new LoggerFactory(this.config);
 
@@ -30,7 +29,7 @@ function ParticlesApp(options) {
   this.scatter.registerModuleInstance('log', this.defaultLogger);
   this.scatter.registerModuleInstance('utils/promises', promises);
   
-  var containerName = this.config.get('container') || 'default';
+  var containerName = this.options.container || this.config.get('container') || 'default';
   this.scatter.registerParticles(this.config.get(['containers', containerName, 'particles']));
   
   var nodeModulesDir = this.config.get(containerName + '.nodeModulesDir') || 
@@ -38,31 +37,24 @@ function ParticlesApp(options) {
   this.scatter.setNodeModulesDir(nodeModulesDir);
 }
 
+ParticlesApp.prototype.load = function() {
+  return this.scatter.load.apply(this.scatter, arguments);
+};
 
-ParticlesApp.prototype.run = function() {
-  if(this.running) {
-    self.defaultLogger.warn("Particles app already running");
-    return;
-  }
-  this.running = true;
+ParticlesApp.prototype.run = function(service /*, ..args*/) {
   var self = this;
-  var promise = promises.when(this.options.beforeServices && this.options.beforeServices(this));
-  
-  var runService = this.options.runService;
-  if(!runService) {
-    self.defaultLogger.info("No runService provided, using the default entry point service (app_start)");
-    runService = 'svc|sequence!app_start';
-  }
-
-  return self.scatter.load(runService).then(function(svc) {
-    return svc.apply(null, self.options.serviceArgs || []);
+  service = service || 'svc!app_start';
+  var args = Array.prototype.slice.call(arguments, 1);
+  self.defaultLogger.info("About to run Particles service ["+service+"]");
+  return self.scatter.load(service).then(function(svc) {
+    return svc.apply(null, args);
   })
   .then(function(res) {
-    self.defaultLogger.info("Particles app started!");
+    self.defaultLogger.info("Particles service ["+service+"] successfully invoked");
     return res;
   })
   .otherwise(function(err) {
-    self.defaultLogger.error({err: err}, "Failed to run Particles app");
+    self.defaultLogger.error({err: err}, "Failed to run Particles service");
     throw err;
   });
 };
