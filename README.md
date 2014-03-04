@@ -8,12 +8,12 @@
 
 Particles is a Node.js platform built on top of the [Scatter](https://github.com/mariocasciaro/scatter) IoC container. 
 
-The Particles platform is composed by a core, providing basic services (e.g. log, configuration) plus a set of **ready-to-use, drop-in** solutions to create **modular and extensible** Node.js applications. 
+The Particles platform is composed by a core, providing basic services (log, configuration) plus a set of **ready-to-use, drop-in** solutions to create **modular and extensible** Node.js applications. 
 
-Particles components can contain server side code as well as **client side scripts and assets like css, images and templates**!
+Particles components can contain server side code as well as **client side scripts and assets, like css, images and templates**!
 
 Particles is not another framework, 
-it does not want to impose the use of any particular library or technology, but on the other side it encourage the use of patterns like **Dependency Injection and Service locator** to build your app.
+it does not want to impose the use of any particular library or technology, but on the other side it encourages the use of patterns like **Dependency Injection and Service locator** to build applications.
 
 ## Stability
 
