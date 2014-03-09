@@ -29,7 +29,7 @@
     "bunyan-prettystream": "~0.1.3",
     "scatter-plugin-config": "~0.1.0",
     "scatter-plugin-all": "~0.1.0",
-    "minimist": "0.0.7"
+    "minimist": "0.0.8"
   },
   "devDependencies": {
     "mocha": "~1.17.1",

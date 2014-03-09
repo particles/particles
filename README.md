@@ -1,5 +1,8 @@
-![Particles logo](https://raw.github.com/particles/particles/master/img/particles_logo_140.png)
+<p align="center">
+<img src="https://raw.github.com/particles/resources/master/particles_full.png" align="center"/>
+</p>
 
+----
 [![NPM version](https://badge.fury.io/js/particles.png)](http://badge.fury.io/js/particles)
 [![Build Status](https://travis-ci.org/particles/particles.png)](https://travis-ci.org/particles/particles)
 [![Dependency Status](https://gemnasium.com/particles/particles.png)](https://gemnasium.com/particles/particles)
@@ -111,11 +114,5 @@ Visit the Hadron [Particles Google group](http://groups.google.com/d/forum/parti
 ## Credits
 
 * [Mario Casciaro](https://github.com/mariocasciaro) - Twitter [@mariocasciaro](https://twitter.com/mariocasciaro) - Creator/Maintainer
-* Zbigniew Mrowinski - Particles logo
-* your name here
-
------
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/particles/particles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+* Zbigniew Mrowinski - Twitter [@MrowinskiZ](https://twitter.com/MrowinskiZ) - Particles logo
 
